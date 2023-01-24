@@ -27,6 +27,13 @@ class XmlseclibsAdapter implements AdapterInterface
     protected $privateKey;
 
     /**
+     * Private key password.
+     *
+     * @var string
+     */
+    protected $privateKeyPassword;
+
+    /**
      * Public key.
      *
      * @var string
@@ -67,7 +74,7 @@ class XmlseclibsAdapter implements AdapterInterface
      */
     protected $transforms = [];
 
-    public function setPrivateKey($privateKey, $algorithmType = self::RSA_SHA1)
+    public function setPrivateKey($privateKey, $algorithmType = self::RSA_SHA1, $password = "")
     {
         $this->privateKey = $privateKey;
         $this->keyAlgorithm = $algorithmType;
@@ -121,6 +128,11 @@ class XmlseclibsAdapter implements AdapterInterface
                  'type' => 'private',
             ]
         );
+        
+        if($this->privateKeyPassword != '') {
+            $objKey->passphrase = $this->privateKeyPassword;
+        }
+
         $objKey->loadKey($this->privateKey);
 
         $objXMLSecDSig = $this->createXmlSecurityDSig();

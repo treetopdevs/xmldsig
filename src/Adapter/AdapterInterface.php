@@ -50,7 +50,7 @@ interface AdapterInterface
      * @see AdapterInterface::DSA_SHA1
      * @see AdapterInterface::RSA_SHA1
      */
-    public function setPrivateKey($privateKey, $algorithmType = self::RSA_SHA1);
+    public function setPrivateKey($privateKey, $algorithmType = self::RSA_SHA1, $password = "");
 
     /**
      * Set the public key.
