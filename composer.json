@@ -1,5 +1,5 @@
 {
-    "name": "fr3d/xmldsig",
+    "name": "treetopdevs/xmldsig",
     "description": "Tool for easy management of XML Signatures (http://www.w3.org/TR/xmldsig-core/)",
     "keywords": [
         "xml",
@@ -9,7 +9,7 @@
         "soap"
     ],
     "license": "BSD-2-Clause",
-    "homepage": "https://github.com/Maks3w/xmldsig/",
+    "homepage": "https://github.com/treetopdevs/xmldsig/",
     "require": {
         "php": ">= 7.0",
         "ext-dom": "*",
